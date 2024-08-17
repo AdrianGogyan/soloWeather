@@ -14,5 +14,5 @@ export function bgGen() {
     const randomImage = dayImg[randomImgIndex];
 
     // Set the background image with a linear gradient overlay
-    document.getElementById("app").style.backgroundImage = `linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/day/sunny.jpg')`;
+    document.getElementById("app").style.backgroundImage = `linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('assets/day/sunny.jpg')`;
 }

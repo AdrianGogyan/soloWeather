@@ -8,26 +8,7 @@ import { dayForecast } from "./src/forecastDays";
 
 bgGen();
 
-const forecastData = await fetchForecastData("Mannheim");
-const currentData = forecastData.current;
-const currentCond = currentData.condition;
-const temperature = Math.floor(currentData.temp_c);
-const windSpeed = currentData.wind_kph;
-const sky = currentCond.text;
-const highestTemp = currentData.feelslike_c;
-
-
-codeInjector("Mannheim",
-    temperature,
-    windSpeed,
-    sky,
-    highestTemp,
-    25,
-    "9:00",
-    "#",
-    "30°"
-
-);
+codeInjector("Mannheim","30", "15.5");
 
 hourDataFunc();
 fetchForecastData("mannheim");
