@@ -1,0 +1,183 @@
+@import "variables";
+
+body{
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    background-color: #394759;
+
+    font-family: $fontFam;
+
+    &::-webkit-scrollbar{
+        width: 0;
+        background: transparent;
+    }
+}
+
+#app{
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    // padding: 20px;
+    border-radius: 8px;
+    // margin-top: 2.5dvh;
+    width: 400px;
+    min-height: calc(100dvh);
+    // background-image: linear-gradient((0deg, #0003, #0003)), url('../assets/day/sunny.jpg');
+    background-size: cover;
+    background-position: center;
+    // background-repeat: no-reeat;
+    
+}
+
+.main-sec{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_cityname{
+        margin: auto;
+        font-size: 1.5em;
+        text-shadow: $textShadow;
+    }
+    &_temp{
+        font-size: 5em;
+        font-weight: 100;
+        text-shadow: $textShadow;
+        
+    }
+    &_extra{
+        font-size: 0.9em;
+        text-shadow: $textShadow;
+
+    }
+}
+
+.hour-sec{
+    @include backFiltered;
+    width: 390px;
+
+    &_condition{
+        padding: 1em;
+        position: relative;
+        margin-bottom: 1em;
+        
+        &::after {
+            content: '';
+            display: block;
+            width: 80%; /* Set the desired width of the border */
+            border-bottom: 1px solid lightgray;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Center the border */
+            bottom: 0; /* Position it at the bottom of the element */
+        }
+
+    }
+
+    &_main{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: .5rem;
+        max-width: 350px;
+        overflow-x: scroll;
+        padding: 0 1em;
+
+        &::-webkit-scrollbar{
+            width:0;
+        }
+
+        &-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            
+
+            &>img{
+                width: 1em;
+                height: 1em;
+            }
+        }
+    }
+}
+
+.day-sec{
+    @include backFiltered;
+    width: 390px;
+
+    &-text{
+        position: relative;
+        padding:1em;
+        &::after {
+            content: '';
+            display: block;
+            width: 90%; /* Set the desired width of the border */
+            border-bottom: 1px solid lightgray;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Center the border */
+            bottom: 0; /* Position it at the bottom of the element */
+        }
+    }
+
+    &-wrapper{
+        padding:1em;
+        display: flex;
+        flex-direction: column;
+        
+        &-day{
+            
+            display: grid;
+            grid-template-areas: "name icon text text";
+            grid-template-columns: 0.5fr 1fr 1fr 1fr;
+            align-items: center;
+            font-size: 0.8rem;
+            padding-bottom: 1em;
+            
+
+            &-icon>img{
+                width:4em;
+                height:4em;
+                margin: 0 2em;
+            }
+            
+            &-name{
+                grid-area: name;
+                padding-bottom:0.2em;
+            }
+
+            &-icon{
+                grid-area: icon;
+            }
+
+            &-text{
+                grid-area: text;
+            }
+        }
+    }
+}
+
+.extra-sec{
+    
+    width: 390px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    
+    &-extra{
+        @include backFiltered;
+        // margin: 0.5em;
+        padding: 1em;
+    }
+}

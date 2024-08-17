@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+$fontFam: Inter,sans-serif;
+
+$textShadow: 1px 1px 5px rgba(0, 0, 0, 0.795);
+
+$backFilter: rgba(81, 78, 133, 0.3);
+$backdrop-filter: blur(50px);
+$border-radius: 8px;
+$box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+@mixin backFiltered{
+    background-color: rgba(66, 62, 134, 0.11);
+    backdrop-filter: blur(50px);
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
